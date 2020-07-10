@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
+# imports for executable
+import pkg_resources.py2_warn
+
 from tkinter import Tk, Label, Button, filedialog, scrolledtext
 import os
 import argparse
-from moviepy.editor import VideoFileClip
+from moviepy.video.io.VideoFileClip import VideoFileClip
 import numpy as np
 from PIL import Image
 
@@ -12,10 +15,7 @@ class MyFirstGUI:
         self.master = master
         self.src_file = None
         self.target_file = None
-        master.title("A simple GUI")
-
-        self.label = Label(master, text="This is our first GUI!")
-        self.label.pack()
+        master.title("slitscan utility")
 
         self.greet_button = Button(master, text="select source file", command=self.select_source_file)
         self.greet_button.pack()
